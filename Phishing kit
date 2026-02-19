@@ -1,0 +1,8 @@
+Phishing Kit Hosted on Legitimate Cloud and CDN Platforms Targeting Microsoft and Google Users.
+The most widespread and dangerous phishing campaigns today are powered by Adversary-in-the-Middle (AiTM) kits, which help unfold phishing attacks where threat actors become a proxy between the victim and a legitimate service.
+
+The top three most active phishing kits remain Tycoon2FA, a Phishing-as-a-Service platform designed to bypass multi-factor authentication; 
+Sneaky2FA, an AiTM threat used in Business Email Compromise attacks; and EvilProxy, a reverse-proxy phishing kit often used for account takeover attacks aimed at high-ranking executives.
+ANY.RUN’s Interactive Sandbox provides security teams with the capabilities to quickly detect phishkit attacks thanks to interactive analysis. In addition to static detection, the 
+sandbox lets SOC analysts safely follow the entire attack chain in an isolated VM and go past all the evasion layers to 
+reveal the final malicious credential theft page or payload. 
