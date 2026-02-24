@@ -1,0 +1,129 @@
+### Overview
+
+Threat actors are actively targeting **Microsoft 365 accounts through an OAuth token theft campaign designed to bypass traditional authentication protections, 
+including multi-factor authentication (MFA).
+
+Instead of stealing passwords, attackers focus on obtaining valid OAuth access tokens, allowing persistent access to victim accounts without triggering standard
+credential-based alerts.
+
+### Why OAuth Token Theft Is Dangerous?
+OAuth tokens:
+1) Grant API-level access to cloud services.
+2) Can persist beyond password resets
+3) Often bypass MFA once issued
+4) Allow attackers to access mail, files, and user data.
+5) Because authentication has already been completed, possession of a valid token effectively grants session-level access.
+
+### Primary Targets
+
+1) Corporate Microsoft 365 tenants.
+2) Executive accounts
+3) Finance and HR departments
+
+## Attack Methodology
+
+Step 1 – Initial Access
+Attackers use:
+
+1) Phishing emails.
+2) Consent phishing (malicious OAuth apps)
+3) Adversary-in-the-Middle (AiTM) phishing pages
+4) Victims are tricked into:
+a) Logging into fake portals.
+b) Granting permissions to malicious Azure applications
+5) Organizations using cloud-only identity models.
+
+### Step 2 – Token Acquisition
+
+Once authentication succeeds:
+1) OAuth access token is captured
+
+2) Refresh token may also be stolen
+
+3) Attacker stores tokens for persistent use
+
+### Step 3 – Post-Exploitation
+
+1) Attackers use stolen tokens to:
+a) Access Exchange Online mailboxes
+b) Exfiltrate sensitive emails
+c) Create mailbox forwarding rules
+d) Access SharePoint / OneDrive files
+e) Conduct Business Email Compromise (BEC)
+f) Because no password is used, password resets may not immediately remove access.
+
+### Observed Techniques:
+
+1) Creation of rogue Azure AD applications.
+2) Abuse of delegated API permissions
+3) Stealthy API-based data access
+4) Use of legitimate Microsoft endpoints for C2-style activity.
+
+### MITRE ATTACK MAPPING:
+
+| Technique                              | Description                              |
+| -------------------------------------- | ---------------------------------------- |
+| T1566 – Phishing                       | Initial credential or consent harvesting |
+| T1550.001 – Use of Web Session Cookie  | Session/token replay                     |
+| T1528 – Steal Application Access Token | OAuth token theft                        |
+| T1078 – Valid Accounts                 | Use of legitimate cloud accounts         |
+| T1114 – Email Collection               | Mailbox data exfiltration                |
+
+
+### Indicators of Suspicious Activity
+
+Security teams should monitor for:
+
+1) Unusual OAuth application consent grants.
+2) New Azure enterprise application registrations.
+3) Tokens issued to unfamiliar app IDs
+4) Unusual IP addresses accessing Microsoft APIs
+5) Suspicious mailbox forwarding rules
+6) Large-scale email download activity
+
+### Defensive Recommendations:
+
+1) Enforce strict OAuth app approval policies.
+2) Limit user consent for third-party applications.
+3) Enable conditional access policies.
+4) Monitor Azure AD audit logs for app registrations.
+5) Implement token revocation after suspicious activity.
+6) Review mailbox forwarding and inbox rules regularly.
+7) Use phishing-resistant MFA (FIDO2 where possible).
+
+### Strategic Security Impact
+
+Token-based attacks represent a shift from credential theft to session hijacking.
+
+Advantages for attackers:
+
+1) MFA bypass after token issuance.
+2) Stealthier access.
+3) Reduced brute-force attempts.
+4) Harder detection via password monitoring.
+5) Cloud-first organizations are particularly exposed because authentication and data access are API-driven.
+
+## Personal Analysis
+
+This campaign demonstrates a broader industry trend: identity is the new perimeter.
+
+Rather than exploiting software vulnerabilities, attackers increasingly focus on abusing authentication workflows and trust relationships within cloud ecosystems.
+
+OAuth token theft is especially dangerous because it leverages legitimate cloud functionality, making detection reliant on behavioral analytics rather than signature-based controls.
+
+Organizations must shift from password-centric defense models to identity and token lifecycle monitoring.
+
+### Key Takeaways
+
+OAuth tokens can be more valuable than passwords.
+
+MFA does not protect against token replay once issued.
+
+Identity monitoring is critical in cloud environments.
+
+Consent phishing is becoming more common.
+
+Token revocation and audit logging are essential defenses.
+
+
+
