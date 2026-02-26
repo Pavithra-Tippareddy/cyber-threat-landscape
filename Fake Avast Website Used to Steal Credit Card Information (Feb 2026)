@@ -1,0 +1,61 @@
+### Overview
+
+Cybercriminals are exploiting a fake website impersonating Avast to steal credit card details from unsuspecting users. The malicious
+site mimics the official Avast download and purchase pages, tricking visitors into entering sensitive payment information that is then
+captured by attackers.
+
+This activity leverages brand impersonation and social engineering, drawing victims with the promise of legitimate security software
+while harvesting financial credentials.
+
+### Attack Details
+
+The fake Avast site was promoted through search results and possibly ads, appearing credible to users seeking Avast downloads or services.
+
+Visitors attempting to purchase or renew antivirus products were shown counterfeit payment forms.
+
+When users submitted credit card details, the information was collected by attackers instead of being processed by legitimate payment
+systems.
+
+No indication of malware installation was observed — the focus is on credential and payment theft.
+
+This type of attack preys on users’ trust in well-known brands and relies on convincing design and URL spoofing.
+
+### Primary Impact
+
+Stolen credit card numbers
+
+Financial loss for victims
+
+Potential abuse of payment cards in fraud schemes
+
+Reputational damage to affected users
+
+This scheme does not exploit a software vulnerability but rather deceives users to voluntarily enter sensitive information.
+
+### MITRE ATT&CK Mapping (Example)
+Technique	Description
+T1566 – Phishing	Social engineering and deceptive websites to lure victims
+T1593 – Search Engine Spoofing	Malicious search results driving traffic to fake site
+T1589 – Initial Access via Web Traffic	Victims directed to fraudulent site through search/ads
+
+Note: Although not a typical malware attack, this activity aligns with ATT&CK techniques related to phishing and brand impersonation.
+
+### Recommendations
+
+Verify official domains before entering personal or financial data.
+
+Use bookmarks for trusted download sources.
+
+Enable browser anti-phishing and HTTPS validation tools.
+
+Consider payment methods with fraud protection (credit cards with monitoring).
+
+Report fake sites to security services and Avast if encountered.
+
+### Key Takeaways
+
+Attackers are using brand impersonation to harvest credit card details.
+
+No malware required — the attack relies on social engineering and spoofed web content.
+
+Users and organizations should be cautious when downloading or purchasing software online.
