@@ -1,0 +1,46 @@
+Overview
+
+Google has released an emergency security update for its Chrome browser, addressing three high-severity security flaws that 
+affect major Chrome components, including media processing, WebGPU shader compilation, and developer tools. The update was released
+as version 145.0.7632.116/117 (desktop) and 145.0.7632.120 (Android). Users are strongly advised to update immediately to reduce risk.
+
+### Vulnerabilities Patched
+1)  CVE-2026-3061 – Media Component Out-of-Bounds Read
+
+An out-of-bounds memory read in Chrome’s media code can expose sensitive memory or be used as part of a larger exploit chain.
+
+2) CVE-2026-3062 – WebGPU Tint Out-of-Bounds Read/Write
+
+This flaw affects Chrome’s WebGPU shader compiler “Tint.” Out-of-bounds writes may enable memory corruption, raising the
+possibility of arbitrary code execution when combined with additional bugs.
+
+3) CVE-2026-3063 – DevTools Implementation Issue
+
+An inappropriate implementation in Chrome DevTools can introduce a privileged boundary weakness, possibly enabling data exposure
+or security control bypass.
+
+At the time of reporting, there are no confirmed active exploits in the wild for these three flaws, but delaying the update increases risk from potential future attacks.
+
+## Impact & Risk
+
+Chrome’s market dominance—present on billions of devices—makes it a valuable target. High-severity memory and implementation bugs
+in browser engines are often leveraged to compromise systems via malicious web content, drive-by downloads, or crafted media files.
+
+### Recommendations
+
+Update Chrome Immediately:
+Go to Help → About Google Chrome or allow automatic updates to install the latest version.
+
+Enterprise Patch Management:
+Ensure corporate devices are patched through centralized update tools and policies.
+
+Monitor for Exploitation:
+Watch for unusual behavior, crashes, or suspicious processes after update deployment.
+
+### Key Takeaways
+
+Three high-severity vulnerabilities were fixed, spanning media, WebGPU, and DevTools.
+
+No active exploitation has been confirmed yet, but prompt patching is essential.
+
+Updating across all platforms (Windows, macOS, Linux, Android) reduces exposure to browser-based attack vectors.
